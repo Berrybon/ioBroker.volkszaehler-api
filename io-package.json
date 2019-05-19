@@ -1,0 +1,101 @@
+{
+    "common": {
+        "name": "volkszaehler-api",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Volkszähler-API",
+        "titleLang": {
+            "en": "Volkszähler-API",
+            "de": "Volkszähler-API",
+            "ru": "Volkszähler-API",
+            "pt": "API do Volkszähler",
+            "nl": "Volkszähler-API",
+            "fr": "Volkszähler-API",
+            "it": "Volkszähler-API",
+            "es": "Volkszähler-API",
+            "pl": "Volkszähler-API",
+            "zh-cn": "Volkszähler-API"
+        },
+        "desc": {
+            "en": "Adapter for connecting ioBroker and Volkszähler",
+            "de": "Adapter zum Verbinden von ioBroker und Volkszähler",
+            "ru": "Адаптер для подключения ioBroker и Volkszähler",
+            "pt": "Adaptador para conectar o ioBroker e o Volkszähler",
+            "nl": "Adapter voor het verbinden van ioBroker en Volkszähler",
+            "fr": "Adaptateur pour connecter ioBroker et Volkszähler",
+            "it": "Adattatore per il collegamento di ioBroker e Volkszähler",
+            "es": "Adaptador para conectar ioBroker y Volkszähler",
+            "pl": "Adapter do podłączenia ioBroker i Volkszähler",
+            "zh-cn": "适用于连接ioBroker和Volkszähler的适配器"
+        },
+        "authors": [
+            "Berrybon <berrybon@gmx.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "volkszaehler-api.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Berrybon/ioBroker.volkszaehler-api/master/admin/volkszaehler-api.png",
+        "readme": "https://github.com/Berrybon/ioBroker.volkszaehler-api/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "communication",
+        "compact": true,
+        "materialize": true,
+        "dependencies": [
+            {
+                "admin": ">=3.0.0"
+            }
+        ]
+    },
+    "native": {
+        "url": "",
+        "path": "",
+        "timeout": 300,
+        "channels": ""
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "If connected to device or service",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
