@@ -88,7 +88,22 @@ function main() {
     adapter.log.info('config Channels: ' + adapter.config.channels);
 
     // Reset connection state at start
-    adapter.setState('info.connection', false, true);
+    // Check availability of the VZ-Host and update info.connection
+    var request = require('request');
+    var options = {
+        url: adapter.config.url + adapter.config.path,
+        method: 'GET',
+        headers: {
+            'User-Agent': 'request'
+        }
+    };
+    request(options, function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+            adapter.setState('info.connection', true, true);
+        } else {
+            adapter.setState('info.connection', false, true);
+        }
+    });
 
     /*
         For every state in the system there has to be also an object of type state
