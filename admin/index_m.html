@@ -57,6 +57,19 @@
             });
             callback(obj);
         }
+
+        // own Code
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+        $(document).ready(function(){
+                $('#chanload').click(function(){
+                    getchan();
+                })
+            });
     </script>
 
 </head>
@@ -65,13 +78,20 @@
 
     <div class="m adapter-container">
         <div class="row">
-            <div class="col s12 m4 l2">
+            <div class="col s6">
                 <img src="volkszaehler-api.png" class="logo">
             </div>
         </div>
-        <!-- For example columns with settings: -->
         <div class="row">
-
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s6 translate"><a href="#settings">Settings</a></li>
+                    <li class="tab col s6 translate"><a href="#channels">Channels</a></li>
+                </ul>
+            </div>
+            <div id="settings" class="col s12">
+                <div class="marg"></div>
+                <div class="row">
                     <div class="col s6 input-field">
                         <input type="text" class="value" id="url" />
                         <label for="url" class="translate">URL or IP to Volkszähler</label>
@@ -80,18 +100,37 @@
                         <input type="text" class="value" id="path" />
                         <label for="path" class="translate">Path to middleware</label>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col s6 input-field">
                         <input type="number" class="value" id="timeout" />
                         <label for="timeout" class="translate">Timeout between readings</label>
                     </div>
-                    <div class="col s6 input-field">
-                        <input type="text" class="value" id="channels" />
-                        <label for="channels" class="translate">Channels from Volkszähler</label>
-                    </div>
+                </div>
+            </div>
+            <div id="channels" class="col s12">
+                <div class="marg"></div>
+                <div class="row">
+                        <div class="col s6 center">
+                                <a id="chanload"class="translate btn-floating waves-effect waves-light btn-small" data-lang-title="Add private channel"><i class="material-icons">add</i></a>
+                            </div>
+                </div>
+                <div class="row">
+                    <table id="channels" class="highlight striped">
+                        <thead>
+                            <tr>
+                                <th class="translate">CName</th>
+                                <th class="translate">Cuuid</th>
+                                <th class="translate">CType</th>
+                                <th ></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-
     </div>
-
 </body>
-
 </html>
