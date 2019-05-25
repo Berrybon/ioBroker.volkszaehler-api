@@ -11,6 +11,7 @@ iobroker.*.tgz
 
 # i18n intermediate files
 admin/i18n/
+admin/words.js
 
 # other
 desktop.ini
